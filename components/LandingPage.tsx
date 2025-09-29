@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2, Upload, Zap, Shield, Download, X, Menu, Star, Sparkles, Target, Rocket } from 'lucide-react';
-import { Play } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Menu, Play, Rocket, Shield, Sparkles, Star, Target, Upload, X, Zap } from 'lucide-react';
 
 const RythmiqHomepage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
