@@ -10,6 +10,10 @@ const config: NextConfig = {
       fullUrl: true,
     },
   },
+  images: {
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
+    formats: ['image/webp'],
+  },
   rewrites: async () => [
     { source: "/healthz", destination: "/api/health" },
     { source: "/api/healthz", destination: "/api/health" },

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { ArrowRight, CheckCircle2, Menu, Play, Rocket, Shield, Sparkles, Star, Target, Upload, X, Zap } from 'lucide-react';
 
 const RythmiqHomepage: React.FC = () => {
@@ -183,11 +184,15 @@ const RythmiqHomepage: React.FC = () => {
       <section className="relative pt-16 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Image Behind Hero Text */}
         <div className="absolute inset-0 z-0">
-          <img
-            src="https://i.ibb.co/B2cH9DQ5/Cyber-cafe.png"
-            alt="Students crowded outside cyber cafe, waiting in line to get exam forms filled. Mood: Frustration, chaos, confusion. Shot during peak admission season. Style: Documentary, authentic Indian street scene with cyber cafe signboard visible."
-            className="object-cover w-full h-full opacity-70 blur-[2px] scale-105"
-            style={{ objectPosition: 'center', zIndex: 0 }}
+          <Image
+            src="/images/cyber-cafe.jpg"
+            alt="Students crowded at Shree Sai Cyber Café waiting for exam form filling services"
+            fill
+            priority
+            quality={85}
+            className="object-cover opacity-60 filter brightness-50"
+            sizes="100vw"
+            style={{ objectPosition: 'center 30%' }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/80 to-slate-950"></div>
         </div>
