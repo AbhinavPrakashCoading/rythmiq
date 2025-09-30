@@ -1,0 +1,28 @@
+{
+  "name": "Rythmiq",
+  "short_name": "Rythmiq",
+  "description": "AI-Powered Music Creation and DocKit Solutions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8b5cf6",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["music", "productivity", "entertainment"],
+  "lang": "en",
+  "dir": "ltr"
+}

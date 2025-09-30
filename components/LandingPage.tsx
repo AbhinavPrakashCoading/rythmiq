@@ -131,9 +131,14 @@ const RythmiqHomepage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-400 rounded-lg flex items-center justify-center">
-                <div className="text-2xl font-bold">R</div>
-              </div>
+              <Image
+                src="/Rythmiq-Logo.png"
+                alt="Rythmiq Logo"
+                width={589}
+                height={423}
+                className="h-10 w-auto"
+                priority
+              />
               <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-purple-200 bg-clip-text text-transparent">
                 Rythmiq
               </span>
@@ -602,9 +607,13 @@ const RythmiqHomepage: React.FC = () => {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-400 rounded-lg flex items-center justify-center">
-                  <div className="text-2xl font-bold">R</div>
-                </div>
+                <Image
+                  src="/Rythmiq-Logo.png"
+                  alt="Rythmiq Logo"
+                  width={589}
+                  height={423}
+                  className="h-10 w-auto"
+                />
                 <span className="text-xl font-bold">Rythmiq</span>
               </div>
               <p className="text-gray-400 text-sm">Empowering students to fill forms independently</p>
