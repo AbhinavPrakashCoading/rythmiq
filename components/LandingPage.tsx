@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from 'react';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle2, Menu, Play, Rocket, Shield, Sparkles, Star, Target, Upload, X, Zap } from 'lucide-react';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { ArrowRight, CheckCircle2, Globe, Heart, Menu, Play, Rocket, Shield, Sparkles, Star, Target, Upload, X, Zap } from 'lucide-react';
 
 const RythmiqHomepage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -139,10 +140,10 @@ const RythmiqHomepage: React.FC = () => {
             </div>
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
-              <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
-              <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">How It Works</a>
-              <a href="#vision" className="text-gray-300 hover:text-white transition-colors">Our Vision</a>
-              <a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
+              <Link href="/" className="text-white font-medium">Home</Link>
+              <a href="/about" className="text-gray-300 hover:text-white transition-colors">About</a>
+              <a href="/dockit" className="text-gray-300 hover:text-white transition-colors">DocKit</a>
+              <a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
               <button 
                 onClick={() => setIsModalOpen(true)}
                 className="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-500 rounded-lg hover:from-purple-500 hover:to-purple-400 transition-all font-medium"
@@ -163,11 +164,11 @@ const RythmiqHomepage: React.FC = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-slate-900 border-t border-purple-500/20">
             <div className="px-4 py-4 space-y-3">
-              <a href="#features" className="block text-gray-300 hover:text-white transition-colors">Features</a>
-              <a href="#how-it-works" className="block text-gray-300 hover:text-white transition-colors">How It Works</a>
-              <a href="#vision" className="block text-gray-300 hover:text-white transition-colors">Our Vision</a>
-              <a href="#contact" className="block text-gray-300 hover:text-white transition-colors">Contact</a>
-              <button 
+              <Link href="/" className="block text-white font-medium">Home</Link>
+              <a href="/about" className="block text-gray-300 hover:text-white transition-colors">About</a>
+              <a href="/dockit" className="block text-gray-300 hover:text-white transition-colors">DocKit</a>
+              <a href="/contact" className="block text-gray-300 hover:text-white transition-colors">Contact</a>
+              <button
                 onClick={() => {
                   setIsModalOpen(true);
                   setIsMobileMenuOpen(false);
@@ -306,7 +307,7 @@ const RythmiqHomepage: React.FC = () => {
         </div>
       </section>
       {/* Features Section */}
-      <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent via-purple-950/20 to-transparent">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent via-purple-950/20 to-transparent">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
@@ -336,7 +337,7 @@ const RythmiqHomepage: React.FC = () => {
         </div>
       </section>
       {/* How It Works */}
-      <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">Three Simple Steps</h2>
@@ -368,7 +369,7 @@ const RythmiqHomepage: React.FC = () => {
         </div>
       </section>
       {/* Rythmiq Vision Section */}
-      <section id="vision" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-950/30 via-purple-900/20 to-transparent">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-950/30 via-purple-900/20 to-transparent">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
@@ -481,6 +482,102 @@ const RythmiqHomepage: React.FC = () => {
         </div>
       </section>
       {/* CTA Section */}
+      {/* Values Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">What Drives Us</h2>
+            <p className="text-xl text-gray-400">The principles that guide every decision we make</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                icon: <Heart className="w-6 h-6" />,
+                title: "Student-First Always",
+                description: "Every decision we make starts with one question: Does this help students? Customer service isn't just our priority—it's in our DNA as Indians."
+              },
+              {
+                icon: <Zap className="w-6 h-6" />,
+                title: "Innovation Through AI",
+                description: "We're taking a leap of faith with artificial intelligence to create an unparalleled experience at the least cost possible, with a very lean team."
+              },
+              {
+                icon: <Globe className="w-6 h-6" />,
+                title: "Accessibility for All",
+                description: "No student should be left behind due to technical barriers. We're building tools that anyone can use, anywhere, anytime."
+              },
+              {
+                icon: <Shield className="w-6 h-6" />,
+                title: "Trust & Transparency",
+                description: "Your documents, your data, your future—we treat them with the respect and security they deserve."
+              }
+            ].map((value, index) => (
+              <div 
+                key={index}
+                className="p-8 rounded-2xl bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/20 backdrop-blur-sm hover:border-purple-500/40 transition-all"
+              >
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center mb-4">
+                  {value.icon}
+                </div>
+                <h3 className="text-2xl font-semibold mb-3">{value.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Journey Timeline */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-purple-950/20 to-transparent">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">Our Journey</h2>
+            <p className="text-xl text-gray-400">From idea to impact</p>
+          </div>
+
+          <div className="space-y-8">
+            {[
+              {
+                year: "September 2025",
+                title: "Rythmiq is Born",
+                emoji: "🚀",
+                description: "Founded with a mission to end the cyber cafe queues and bring form-filling power to every student's fingertips."
+              },
+              {
+                year: "Present",
+                title: "Building DocKit",
+                emoji: "⚡",
+                description: "Launching our first product—an AI-powered document validation tool that ensures your applications are perfect, every time."
+              },
+              {
+                year: "2030 Vision",
+                title: "The Go-To Platform",
+                emoji: "🎯",
+                description: "Becoming India's trusted platform for form automation, document encryption, storage, and validation."
+              }
+            ].map((milestone, index) => (
+              <div 
+                key={index}
+                className="flex gap-6 items-start"
+              >
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center font-bold shadow-lg shadow-purple-500/50">
+                    {milestone.emoji}
+                  </div>
+                </div>
+                <div className="flex-1 p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/20">
+                  <div className="text-sm text-purple-400 font-semibold mb-2">{milestone.year}</div>
+                  <h3 className="text-2xl font-bold mb-2">{milestone.title}</h3>
+                  <p className="text-gray-400 leading-relaxed">{milestone.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <div className="p-12 rounded-3xl bg-gradient-to-br from-purple-600/20 to-purple-400/10 border border-purple-500/30 backdrop-blur-sm">
@@ -517,7 +614,7 @@ const RythmiqHomepage: React.FC = () => {
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
                 <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
-                <li><a href="#vision" className="hover:text-white transition-colors">Our Vision</a></li>
+                <li><a href="/about#vision" className="hover:text-white transition-colors">Our Vision</a></li>
               </ul>
             </div>
             <div>
@@ -531,8 +628,8 @@ const RythmiqHomepage: React.FC = () => {
             <div>
               <h4 className="font-semibold mb-4">Legal</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+                <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
               </ul>
             </div>
           </div>
