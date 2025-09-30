@@ -388,7 +388,7 @@ const RythmiqHomepage: React.FC = () => {
               accessible, simple, and stress-free for every Indian student.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
             {visionProducts.map((product, index) => (
               <div 
                 key={index}
