@@ -75,12 +75,6 @@ const RythmiqHomepage: React.FC = () => {
       status: "Coming Soon",
       description: "Intelligent form auto-fill with real-time error detection",
       available: false
-    },
-    {
-      name: "SmartVerify",
-      status: "Coming Soon",
-      description: "Instant document verification and eligibility checking",
-      available: false
     }
   ];
 
@@ -149,12 +143,12 @@ const RythmiqHomepage: React.FC = () => {
               <a href="/about" className="text-gray-300 hover:text-white transition-colors">About</a>
               <a href="/dockit" className="text-gray-300 hover:text-white transition-colors">DocKit</a>
               <a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
-              <button 
-                onClick={() => setIsModalOpen(true)}
+              <Link 
+                href="/dockit"
                 className="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-500 rounded-lg hover:from-purple-500 hover:to-purple-400 transition-all font-medium"
               >
-                Get Early Access
-              </button>
+                Try DocKit
+              </Link>
             </div>
             {/* Mobile Menu Button */}
             <button 
@@ -173,15 +167,12 @@ const RythmiqHomepage: React.FC = () => {
               <a href="/about" className="block text-gray-300 hover:text-white transition-colors">About</a>
               <a href="/dockit" className="block text-gray-300 hover:text-white transition-colors">DocKit</a>
               <a href="/contact" className="block text-gray-300 hover:text-white transition-colors">Contact</a>
-              <button
-                onClick={() => {
-                  setIsModalOpen(true);
-                  setIsMobileMenuOpen(false);
-                }}
-                className="w-full px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-500 rounded-lg hover:from-purple-500 hover:to-purple-400 transition-all font-medium"
+              <Link
+                href="/dockit"
+                className="w-full px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-500 rounded-lg hover:from-purple-500 hover:to-purple-400 transition-all font-medium text-center block"
               >
-                Get Early Access
-              </button>
+                Try DocKit
+              </Link>
             </div>
           </div>
         )}
@@ -419,12 +410,12 @@ const RythmiqHomepage: React.FC = () => {
                 </div>
                 <p className="text-gray-400 leading-relaxed">{product.description}</p>
                 {product.available && (
-                  <button 
-                    onClick={() => setIsModalOpen(true)}
+                  <Link 
+                    href="/dockit"
                     className="mt-6 w-full px-4 py-2 bg-purple-600 rounded-lg hover:bg-purple-500 transition-all font-medium flex items-center justify-center gap-2"
                   >
-                    Get Access <ArrowRight className="w-4 h-4" />
-                  </button>
+                    Checkout <ArrowRight className="w-4 h-4" />
+                  </Link>
                 )}
               </div>
             ))}
@@ -546,41 +537,39 @@ const RythmiqHomepage: React.FC = () => {
             <p className="text-xl text-gray-400">From idea to impact</p>
           </div>
 
-          <div className="space-y-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 year: "September 2025",
                 title: "Rythmiq is Born",
-                emoji: "🚀",
+                step: "01",
                 description: "Founded with a mission to end the cyber cafe queues and bring form-filling power to every student's fingertips."
               },
               {
                 year: "Present",
                 title: "Building DocKit",
-                emoji: "⚡",
+                step: "02",
                 description: "Launching our first product—an AI-powered document validation tool that ensures your applications are perfect, every time."
               },
               {
                 year: "2030 Vision",
                 title: "The Go-To Platform",
-                emoji: "🎯",
+                step: "03",
                 description: "Becoming India's trusted platform for form automation, document encryption, storage, and validation."
               }
             ].map((milestone, index) => (
-              <div 
-                key={index}
-                className="flex gap-6 items-start"
-              >
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center font-bold shadow-lg shadow-purple-500/50">
-                    {milestone.emoji}
+              <div key={index} className="relative">
+                <div className="text-center">
+                  <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-purple-600 to-purple-400 flex items-center justify-center mb-6 text-3xl font-bold shadow-lg shadow-purple-500/50">
+                    {milestone.step}
                   </div>
-                </div>
-                <div className="flex-1 p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-transparent border border-purple-500/20">
                   <div className="text-sm text-purple-400 font-semibold mb-2">{milestone.year}</div>
-                  <h3 className="text-2xl font-bold mb-2">{milestone.title}</h3>
+                  <h3 className="text-2xl font-semibold mb-3">{milestone.title}</h3>
                   <p className="text-gray-400 leading-relaxed">{milestone.description}</p>
                 </div>
+                {index < 2 && (
+                  <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-purple-500 to-transparent"></div>
+                )}
               </div>
             ))}
           </div>
@@ -595,13 +584,13 @@ const RythmiqHomepage: React.FC = () => {
             <p className="text-xl text-gray-300 mb-8">
               Join 5,000+ students who are filling forms independently, confidently, and successfully.
             </p>
-            <button 
-              onClick={() => setIsModalOpen(true)}
+            <Link 
+              href="/dockit"
               className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-500 rounded-lg hover:from-purple-500 hover:to-purple-400 transition-all font-medium text-lg flex items-center justify-center gap-2 mx-auto shadow-lg shadow-purple-500/30"
             >
-              Get Early Access to DocKit
+              Start Using DocKit
               <ArrowRight className="w-5 h-5" />
-            </button>
+            </Link>
             <p className="text-sm text-gray-400 mt-4">No credit card required • Launch: October 2025</p>
           </div>
         </div>
