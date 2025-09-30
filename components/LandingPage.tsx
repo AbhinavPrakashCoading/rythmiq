@@ -224,17 +224,22 @@ const RythmiqHomepage: React.FC = () => {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <div className="flex flex-col sm:flex-row gap-4 w-full justify-center items-center">
-                <button 
-                  onClick={() => setIsModalOpen(true)}
+                <Link 
+                  href="/dockit"
                   className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-500 rounded-lg hover:from-purple-500 hover:to-purple-400 transition-all font-medium text-lg flex items-center justify-center gap-2 shadow-lg shadow-purple-500/30 w-full sm:w-auto"
                 >
                   Join the Independent Generation
                   <ArrowRight className="w-5 h-5" />
-                </button>
-                <button className="px-8 py-4 border border-purple-500/50 rounded-lg hover:bg-purple-500/10 transition-all font-medium text-lg backdrop-blur-sm w-full sm:w-auto flex items-center justify-center gap-2">
+                </Link>
+                <a 
+                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 border border-purple-500/50 rounded-lg hover:bg-purple-500/10 transition-all font-medium text-lg backdrop-blur-sm w-full sm:w-auto flex items-center justify-center gap-2"
+                >
                   <Play className="w-5 h-5" />
                   Watch Demo
-                </button>
+                </a>
               </div>
             </div>
             {/* Trust Indicators */}
@@ -260,20 +265,20 @@ const RythmiqHomepage: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-purple-400 mb-2">5,000+</div>
-              <div className="text-sm text-gray-400">Students on Waitlist</div>
+              <div className="text-4xl font-bold text-purple-400 mb-2">ALL</div>
+              <div className="text-sm text-gray-400">Major Exams Supported</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-purple-400 mb-2">50+</div>
-              <div className="text-sm text-gray-400">Exams Supported</div>
+              <div className="text-4xl font-bold text-purple-400 mb-2">UPSC</div>
+              <div className="text-sm text-gray-400">JEE, NEET, CAT, GATE</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-purple-400 mb-2">99.9%</div>
               <div className="text-sm text-gray-400">Validation Accuracy</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-purple-400 mb-2">₹0</div>
-              <div className="text-sm text-gray-400">Cyber Cafe Fees Saved</div>
+              <div className="text-4xl font-bold text-purple-400 mb-2">100%</div>
+              <div className="text-sm text-gray-400">Compliant Documents</div>
             </div>
           </div>
         </div>
