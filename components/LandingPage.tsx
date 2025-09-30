@@ -118,13 +118,22 @@ const RythmiqHomepage: React.FC = () => {
     }
   ];
 
+  const handleLogoClick = () => {
+    // Scroll to top when clicking logo on home page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-lg border-b border-purple-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <Link 
+              href="/" 
+              className="flex items-center gap-3 hover:opacity-80 transition-opacity cursor-pointer"
+              onClick={handleLogoClick}
+            >
               <Image
                 src="/Rythmiq-Logo.png"
                 alt="Rythmiq Logo"
