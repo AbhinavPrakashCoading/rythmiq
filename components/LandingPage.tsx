@@ -135,11 +135,11 @@ const RythmiqHomepage: React.FC = () => {
               onClick={handleLogoClick}
             >
               <Image
-                src="/Rythmiq-Logo.png"
+                src="/Rythmiq-logo-light.png"
                 alt="Rythmiq Logo"
-                width={589}
-                height={423}
-                className="h-10 w-auto"
+                width={40}
+                height={40}
+                className="h-10 w-10"
                 priority
               />
               <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-purple-200 bg-clip-text text-transparent">
@@ -611,11 +611,11 @@ const RythmiqHomepage: React.FC = () => {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <Image
-                  src="/Rythmiq-Logo.png"
+                  src="/Rythmiq-logo-dark.png"
                   alt="Rythmiq Logo"
-                  width={589}
-                  height={423}
-                  className="h-10 w-auto"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10"
                 />
                 <span className="text-xl font-bold">Rythmiq</span>
               </div>

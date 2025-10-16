@@ -206,11 +206,11 @@ const DockitProductPage: React.FC = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-3">
               <Image
-                src="/Rythmiq-Logo.png"
+                src="/Rythmiq-logo-light.png"
                 alt="Rythmiq Logo"
-                width={589}
-                height={423}
-                className="h-10 w-auto"
+                width={40}
+                height={40}
+                className="h-10 w-10"
                 priority
               />
               <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-purple-200 bg-clip-text text-transparent">
@@ -224,12 +224,14 @@ const DockitProductPage: React.FC = () => {
               <Link href="/about" className="text-gray-300 hover:text-white transition-colors">About</Link>
               <Link href="/dockit" className="text-white font-medium">DocKit</Link>
               <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
-              <button 
-                onClick={() => setIsModalOpen(true)}
+              <Link 
+                href="https://dockit.rythmiq.in/dashboard"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-500 rounded-lg hover:from-purple-500 hover:to-purple-400 transition-all font-medium"
               >
                 Get Access
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -250,15 +252,15 @@ const DockitProductPage: React.FC = () => {
               <Link href="/about" className="block text-gray-300 hover:text-white transition-colors">About</Link>
               <Link href="/dockit" className="block text-white font-medium">DocKit</Link>
               <Link href="/contact" className="block text-gray-300 hover:text-white transition-colors">Contact</Link>
-              <button 
-                onClick={() => {
-                  setIsModalOpen(true);
-                  setIsMobileMenuOpen(false);
-                }}
-                className="w-full px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-500 rounded-lg hover:from-purple-500 hover:to-purple-400 transition-all font-medium"
+              <Link 
+                href="https://dockit.rythmiq.in/dashboard"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block w-full px-6 py-2 bg-gradient-to-r from-purple-600 to-purple-500 rounded-lg hover:from-purple-500 hover:to-purple-400 transition-all font-medium text-center"
               >
                 Get Access
-              </button>
+              </Link>
             </div>
           </div>
         )}
@@ -287,13 +289,15 @@ const DockitProductPage: React.FC = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <button 
-                  onClick={() => setIsModalOpen(true)}
+                <Link 
+                  href="https://dockit.rythmiq.in/dashboard"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-500 rounded-lg hover:from-purple-500 hover:to-purple-400 transition-all font-medium text-lg flex items-center justify-center gap-2 shadow-lg shadow-purple-500/30"
                 >
                   <Globe className="w-5 h-5" />
                   Launch Web App
-                </button>
+                </Link>
                 <button 
                   className="px-8 py-4 border border-purple-500/50 rounded-lg hover:bg-purple-500/10 transition-all font-medium text-lg"
                 >
@@ -314,18 +318,18 @@ const DockitProductPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right - App Mockup Placeholder */}
+            {/* Right - App Mockup */}
             <div className="relative">
-              <div className="rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 border border-purple-500/30 p-8 shadow-2xl">
-                <div className="text-center">
-                  <div className="text-gray-500 text-sm mb-4">[APP MOCKUP PLACEHOLDER]</div>
-                  <div className="text-gray-400 text-sm leading-relaxed">
-                    <p className="mb-2"><strong>Visual:</strong> DocKit web app interface on laptop/tablet mockup</p>
-                    <p className="mb-2"><strong>Screen shows:</strong> Upload area with drag-drop zone, 3-4 document thumbnails with green checkmarks, validation progress bar, and prominent "Download ZIP" button</p>
-                    <p className="mb-2"><strong>Style:</strong> Clean, modern UI with purple accent colors, floating effect with subtle shadow</p>
-                    <p><strong>Mood:</strong> Professional, trustworthy, simple to use</p>
-                  </div>
-                </div>
+              <div className="relative rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/Dockit-mockup.png"
+                  alt="DocKit App Interface Mockup"
+                  width={800}
+                  height={600}
+                  className="w-full h-auto rounded-lg"
+                  priority
+                />
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-tr from-purple-600/20 via-transparent to-purple-400/10"></div>
               </div>
             </div>
           </div>
@@ -412,28 +416,62 @@ const DockitProductPage: React.FC = () => {
             <p className="text-xl text-gray-400">Four simple steps to perfect applications</p>
           </div>
 
-          <div className="space-y-16">
+          <div className="space-y-12">
             {howItWorksSteps.map((step, index) => (
               <div 
                 key={index}
-                className={`grid lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+                className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}
               >
                 {/* Content */}
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-purple-400 text-2xl font-bold mb-4">
-                    {step.step}
+                <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-purple-600 to-purple-400 text-xl font-bold shadow-lg">
+                      {step.step}
+                    </div>
+                    <div className="h-px flex-1 bg-gradient-to-r from-purple-500 to-transparent"></div>
                   </div>
-                  <h3 className="text-3xl font-bold mb-4">{step.title}</h3>
-                  <p className="text-xl text-gray-300 leading-relaxed">{step.description}</p>
+                  
+                  <h3 className="text-3xl font-bold text-white">{step.title}</h3>
+                  <p className="text-lg text-gray-300 leading-relaxed">{step.description}</p>
+                  
+                  <div className="flex items-center gap-3 text-sm text-purple-300">
+                    <div className="w-2 h-2 rounded-full bg-purple-400"></div>
+                    <span>
+                      {step.step === 1 && "Choose from 50+ supported exams"}
+                      {step.step === 2 && "Multiple upload methods available"}
+                      {step.step === 3 && "Real-time validation & feedback"}
+                      {step.step === 4 && "Ready-to-submit ZIP package"}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Screenshot Placeholder */}
-                <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className="rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-purple-500/30 p-8 shadow-xl">
-                    <div className="text-center">
-                      <div className="text-gray-500 text-sm mb-3">[SCREENSHOT PLACEHOLDER - Step {step.step}]</div>
-                      <p className="text-gray-400 text-sm leading-relaxed">{step.screenshot}</p>
+                {/* Visual Element */}
+                <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                  <div className="relative p-8 rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-purple-500/20 backdrop-blur-sm">
+                    <div className="text-center space-y-4">
+                      <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-600/20 to-purple-400/20 border border-purple-500/30">
+                        {step.step === 1 && <Globe className="w-10 h-10 text-purple-300" />}
+                        {step.step === 2 && <FileCheck className="w-10 h-10 text-purple-300" />}
+                        {step.step === 3 && <Zap className="w-10 h-10 text-purple-300" />}
+                        {step.step === 4 && <CheckCircle2 className="w-10 h-10 text-purple-300" />}
+                      </div>
+                      <div className="text-lg font-semibold text-purple-300">
+                        {step.step === 1 && "Select & Configure"}
+                        {step.step === 2 && "Upload & Organize"}
+                        {step.step === 3 && "AI Processing"}
+                        {step.step === 4 && "Download Ready"}
+                      </div>
+                      <div className="text-sm text-gray-400 max-w-sm mx-auto">
+                        {step.step === 1 && "Smart exam detection with automatic requirement loading"}
+                        {step.step === 2 && "Drag & drop interface with bulk upload support"}
+                        {step.step === 3 && "Advanced AI validates and optimizes your documents"}
+                        {step.step === 4 && "Perfectly organized files ready for submission"}
+                      </div>
                     </div>
+                    
+                    {/* Decorative elements */}
+                    <div className="absolute top-4 right-4 w-3 h-3 rounded-full bg-purple-400 opacity-60"></div>
+                    <div className="absolute bottom-4 left-4 w-2 h-2 rounded-full bg-purple-300 opacity-40"></div>
                   </div>
                 </div>
               </div>
@@ -542,14 +580,16 @@ const DockitProductPage: React.FC = () => {
             <p className="text-xl text-gray-300 mb-8">
               Join thousands of students who are submitting perfect applications with DocKit.
             </p>
-            <button 
-              onClick={() => setIsModalOpen(true)}
+            <Link 
+              href="https://dockit.rythmiq.in/dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-500 rounded-lg hover:from-purple-500 hover:to-purple-400 transition-all font-medium text-lg flex items-center justify-center gap-2 mx-auto shadow-lg shadow-purple-500/30"
             >
               <Globe className="w-5 h-5" />
               Launch Web App Now
               <ArrowRight className="w-5 h-5" />
-            </button>
+            </Link>
             <p className="text-sm text-gray-400 mt-4">No installation required • Works on any device • Free to try</p>
           </div>
         </div>
@@ -562,11 +602,11 @@ const DockitProductPage: React.FC = () => {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <Image
-                  src="/Rythmiq-Logo.png"
+                  src="/Rythmiq-logo-dark.png"
                   alt="Rythmiq Logo"
-                  width={589}
-                  height={423}
-                  className="h-10 w-auto"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10"
                 />
                 <span className="text-xl font-bold">Rythmiq</span>
               </div>
